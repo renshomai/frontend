@@ -1,0 +1,15 @@
+<h2>New Post</h2>
+<form (ngSubmit)="submit()">
+  <div>
+    <label>Title</label><br />
+    <input [(ngModel)]="title" name="title" required />
+  </div>
+  <div>
+    <label>Content</label><br />
+    <textarea [(ngModel)]="content" name="content" rows="8" required></textarea>
+  </div>
+  <button type="submit" [disabled]="loading">Publish</button>
+
+  <div *ngIf="message" style="color:green">{{ message }}</div>
+  <div *ngIf="error" style="color:red">{{ error }}</div>
+</form>

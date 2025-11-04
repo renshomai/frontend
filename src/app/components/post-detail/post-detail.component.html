@@ -1,0 +1,12 @@
+<a routerLink="/">← Back</a>
+
+<div *ngIf="loading">Loading…</div>
+<div *ngIf="error" style="color:red">{{ error }}</div>
+
+<ng-container *ngIf="!loading && post">
+  <h2>{{ post.title }}</h2>
+  <div style="font-size:12px; opacity:.7; margin-bottom:8px">
+    by {{ post.author || 'Unknown' }} · {{ post.createdAt | date:'medium' }}
+  </div>
+  <p style="white-space:pre-wrap">{{ post.content }}</p>
+</ng-container>
